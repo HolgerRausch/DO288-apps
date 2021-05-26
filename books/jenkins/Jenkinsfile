@@ -13,7 +13,7 @@ pipeline {
         DEV_PROJECT = "holger-rausch2-dev"
         STAGE_PROJECT = "holger-rausch2-stage"
         APP_GIT_URL = "https://github.com/HolgerRausch/DO288-apps"
-        NEXUS_SERVER = "http://nexus-common.apps.cluster.domain.example.com/repository/nodejs"
+        NEXUS_SERVER = "https://github.com/HolgerRausch/DO288-apps/"
        
         // DO NOT CHANGE THE GLOBAL VARS BELOW THIS LINE
         APP_NAME = "books"
@@ -26,8 +26,8 @@ pipeline {
             steps {
                 echo '### Installing NPM dependencies ###'
                 sh '''
-                        npm config set registry ${NEXUS_SERVER}
-                        cd books
+                        npm config set registry "https://github.com/HolgerRausch/DO288-apps/tree/custom-pipeline/books"
+                    
                         npm install
                    '''
             }
