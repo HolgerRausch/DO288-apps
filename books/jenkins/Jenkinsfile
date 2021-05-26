@@ -5,7 +5,7 @@ pipeline {
     }
     agent {
       node {
-        label 'jenkins-agent-nodejs'
+        label 'master'
       }
     }
 
